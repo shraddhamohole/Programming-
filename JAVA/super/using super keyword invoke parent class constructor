@@ -1,0 +1,24 @@
+//using super keyword invoke parent class constructor
+class Parent
+{
+Parent()
+{
+System.out.println("parent class");
+}
+}
+class Child extends Parent
+{
+Child()
+{
+super();
+System.out.println("child class");
+}
+}
+
+class Other
+{
+public static void main(String args[])
+{
+Child c=new Child();
+} 
+}
