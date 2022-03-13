@@ -1,0 +1,18 @@
+//c program to print product of digits of no
+#include<stdio.h>
+#include<conio.h>
+void  main()
+{
+    int no,product=1,i;
+    printf("Enter any number: ");
+    scanf_s("%d", &no);
+    while(no>0)
+    {
+		i=no%10;
+	    no = no/10;
+        product = product*i;      
+    }
+    printf("\nproduct of Digit = %d", product);
+    _getch();
+    
+}
