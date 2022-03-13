@@ -1,0 +1,138 @@
+// LIGHTBILL HAS-A relationship
+class Customer
+{
+private int customer_no;
+private String customer_name;
+private String address;
+private int pincode;
+ Lightbill L;
+
+
+void setCustomerno(int customer_no)
+{
+this.customer_no=customer_no;
+}
+int getCustomerno()
+{
+return this.customer_no;
+}
+
+void setCustomername(String customer_name)
+{
+this.customer_name=customer_name;
+
+}
+String getCustomername()
+{
+return this.customer_name;
+}
+
+void setAddress(String Address)
+{
+this.address=address;
+}
+String getAddress()
+{
+return this.address;
+
+}
+void setPincode(int pincode)
+{
+
+this.pincode=pincode;
+
+}
+int getPincode()
+{
+return this.pincode;
+}	
+Customer()
+{
+
+
+}
+
+Customer(int customer_no,String customer_name,String address,int pincode)
+{
+this.customer_no=customer_no;
+this.customer_name=customer_name;
+this.address=address;
+this.pincode=pincode;
+L=new Lightbill(1147,10,100,40);
+L.fun();
+
+System.out.println("CUSTOMER INFORMATION");
+System.out.println("customer no="+"  "+customer_no);
+System.out.println("customer name="+" "+customer_name);
+System.out.println("customer address="+" "+address);
+System.out.println("pincode:"+pincode);
+
+
+}
+
+}
+class Lightbill 
+{
+protected long meterno;
+protected final int minunit=5;
+protected final int maxunit=100;
+public int unit;
+int bill;
+Lightbill(long meterno,int minunit,int maxunit,int unit)
+
+{
+this.meterno=meterno;
+minunit=5;
+maxunit=100;
+this.unit=unit;
+this.bill=bill;
+}
+
+void fun()
+{
+
+if(unit>0 && unit<=100)
+{
+bill=(unit*5);
+}
+else if(unit >100 && unit<=300)
+{
+bill=(100*5)+(unit-100)*7;
+
+}
+else
+{
+bill=(100*5)+(100*7)+(unit-300)*15;
+
+}
+
+
+System.out.println(bill);
+}
+
+}
+
+
+
+
+
+class Temporary
+{
+public static void main(String args[])
+{
+
+Customer C=new Customer(1,"shraddha","Sangamner",422605);
+
+System.out.println("---------------------------------------------------------------------------------------");
+System.out.println("LIGHTBILL DETAILS");
+System.out.println("meter no:"+" "+C.L.meterno);
+System.out.println("maximum units"+" "+C.L.maxunit);
+System.out.println("minimum units"+" "+C.L.minunit);
+System.out.println("units"+" "+C.L.unit);
+System.out.println("BILL: "+C.L.bill);
+
+
+}
+
+
+}
