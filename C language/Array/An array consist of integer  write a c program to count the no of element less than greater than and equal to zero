@@ -1,0 +1,39 @@
+//An array consist of integer  write a c program to count the no of element less than greater than and equal to zero
+#include<stdio.h>
+void main()
+{
+	int n,i, a[100],count1=0,count2=0,count3=0;
+	printf("enter size of array\n");
+	scanf_s("%d",&n);
+	printf("enter array element\n");
+	for(i=0;i<n;i++)
+	{
+	{
+		scanf_s("%d",&a[i]);
+	}
+		
+		if(a[i]==0)
+		{
+		count1++;
+		}
+          
+		if(a[i]>0)
+			{
+			count2++;
+			}
+		
+		if(a[i]<0)
+		{
+         count3++;
+		
+		}
+	}
+		
+		printf("\ncount of less than zero no is %d",count3);
+		printf("\ncount of greater than zero no is %d",count2);
+		printf("\ncount of zero is %d",count1);
+		
+	
+	
+}
+	
