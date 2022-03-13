@@ -1,0 +1,18 @@
+//C program to print factors of given no
+#include<stdio.h>
+void main()
+{
+	int i,n;
+	printf("enter no:\t");
+	scanf_s("%d",&n);
+	printf("factors of %d are\t",n);
+		for(i=1;i<=n;i++)
+	{
+		if(n%i==0)
+		{
+			printf("%d\t",i);
+		}
+			
+	}
+	
+}
