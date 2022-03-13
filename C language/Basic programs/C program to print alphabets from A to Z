@@ -1,0 +1,16 @@
+//C program to print alphabets from A to Z
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+	char ch;
+	printf("enter alphabets A to Z:\n");
+	ch='A';
+    while(ch<='Z')
+	{
+     printf("%c\t",ch);
+     ch++;
+
+	}
+
+}
