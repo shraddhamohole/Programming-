@@ -1,0 +1,35 @@
+class Student
+{
+private int age;
+
+void setAge(int age)
+{
+if(age>0)
+{
+this.age=age;
+}
+else
+{
+System.out.println("invalid age");
+}
+}
+
+int getAge()
+{
+
+return this.age;
+
+}
+}
+
+class Clerk
+{
+
+public static void main(String args[])
+{
+Student s=new Student();
+s.setAge(19);
+int b=s.getAge();
+System.out.println("age is" b);
+}
+}
