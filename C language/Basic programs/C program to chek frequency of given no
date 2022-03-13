@@ -1,0 +1,32 @@
+//C program to chek frequency of given no
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+	int no,temp,temp1,rem1=0,rem2=0,count;
+	printf("enter no:\n");
+	scanf_s("%d",&no);
+	temp=no;
+	while(no!=0)
+
+	{
+		count=0;
+		temp1=temp;
+		rem1=no%10;
+
+		while(temp1!=0)
+		{
+			rem2=temp1%10;
+			
+			if(rem2==rem1)
+			{
+				count++;
+			}
+			temp1=temp1/10;
+		}
+		printf("%d=>%d\n",rem1,count);
+		no=no/10;
+		}
+	_getch();
+	
+}
