@@ -1,0 +1,60 @@
+//C program to print no in word
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+	int no,R=0,rev,num,choice;
+	printf("enter the no\n");
+	scanf_s("%d",&no);
+	num=no;
+	while(no!=0)
+	{
+		rev=no%10;
+		R=R*10+rev;
+		no=no/10;
+	}
+	while(R!=0)
+	{
+		choice=R%10;
+	     R=R/10;
+	
+		switch(choice)
+		{
+		case 0:
+				printf("zero");
+				break;
+		case 1:
+			printf("one");
+			break;
+		case 2:
+			printf("two");
+			break;
+		case 3:
+			printf("three");
+			break;
+
+		case 4:
+			printf("four");
+			break;
+		case 5:
+			printf("five");
+			break;
+		case 6:
+			printf("six");
+			break;
+		case 7:
+			printf("seven");
+			break;
+		case 8:
+			printf("eight");
+			break;
+		case 9:
+			printf("nine");
+			break;
+		default:
+			printf("invalid no");
+		}
+		
+	}
+	_getch();
+}
