@@ -1,0 +1,23 @@
+//C program to find power of no
+#include <stdio.h>
+ 
+void  main()
+{
+  int i, no, Exponent,Power = 1;
+  
+  
+  printf(" Please Enter any Number : ");
+  scanf_s(" %d", &no);
+
+  printf("\nPlease Enter the Exponent Vlaue: ");
+  scanf_s(" %d", &Exponent);
+    
+  for(i = 1; i <= Exponent; i++)
+  {
+  	Power = Power * no;
+  }
+  
+  printf("\n  %d power of %d = %ld", Exponent,no, Power);
+  
+ 
+}
