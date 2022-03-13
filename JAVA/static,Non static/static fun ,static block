@@ -1,0 +1,37 @@
+class New2
+{
+    static int a;
+     int b;
+     
+    static void fun()
+    {
+        System.out.println(b);
+        System.out.println("non-static function");
+    }
+    New2()
+    {
+        System.out.println("constructor");
+    }
+    static
+    {
+        System.out.println("static block");
+    }
+    {
+        System.out.println("non static block");
+        
+    }
+    void gun()
+    {
+        System.out.println(a);
+        System.out.println("Non static function");
+    }
+
+    public static void main(String args[])
+    {
+        New2 N=new New2();
+        New2.fun();
+    
+
+        System.out.println("main function");
+    }
+}
