@@ -1,0 +1,15 @@
+//Bufferreader class
+import java.io.BufferedReadder;
+import java.io.InputStreamReader;
+ class Bufferedreader
+ {
+ public static void main(String args[]) throws Exception
+ {
+ BufferedReader br=new BufferedReadder(new InputStreamReader(System.in));
+ 
+ String name=" ";
+ System.out.println("enter name");
+ name=br.readline();
+ System.out.println("name is :"+name);
+ }
+ }
