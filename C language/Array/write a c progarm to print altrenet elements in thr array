@@ -1,0 +1,22 @@
+// write a c progarm to print altrenet elements in thr array
+#include<stdio.h>
+int main()
+{
+    int a[10];
+    int n, i;
+    printf("how many element you want\n");
+    scanf_s("%d",&n);
+    printf("enter the array element\n");
+    for(i=0;i<n;i++)
+    {
+        scanf_s("%d",&a[i]);
+    }
+    printf("alternet element of the array\n");
+    for(i=0;i<n;i=i+2)
+    {
+       
+        printf("%d\n",a[i]);
+    }
+    return 0;
+
+}
