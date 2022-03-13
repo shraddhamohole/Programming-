@@ -1,0 +1,152 @@
+// Encapsulation and is-a , Has-a relationship code
+// Using Encapsulation,inheritance (IS-A,HAS-A ) show relationship between Employee,manager,salesman and address class
+class Employee
+{
+private int id;
+private int age;
+private String name;
+protected int salary;
+Address Add;
+void setId(int id)
+{
+
+this.id=id;
+}
+int getId()
+{
+
+return this.id;
+
+}
+
+void setAge(int age)
+{
+this.age=age;
+
+}
+int getAge()
+{
+
+return this.age;
+}
+
+void setName(String name)
+{
+this.name=name;
+
+}
+String getName()
+{
+return this.name;
+
+}
+
+Employee()
+{
+
+
+}
+Employee(int id,int age,String name,int salary)
+{
+this.id=id;
+this.age=age;
+this.name=name;
+this.salary=salary;
+Add=new Address(125,"pune");
+System.out.println(id+" "+age+" "+name+" "+salary);
+
+}
+
+int totalsalary()
+	{
+	return this.salary;
+	}
+}
+class Manager extends Employee
+{
+private int bonus;
+Manager(int id,int age,String name,int salary,int bonus)
+{
+super(id,age,name,salary);
+this.bonus=bonus;
+}
+int calIncome()
+{
+return this.salary+this.bonus;
+}
+void setBonus(int bonus)
+{
+this.bonus=bonus;
+
+}
+int getBonus()
+{
+
+return this.bonus;
+}
+
+}
+class Salesman extends Employee
+{
+private int insentive;
+
+Salesman(int id,int age,String name,int salary,int insentive)
+{
+super(id,age,name,salary);
+this.insentive=insentive;
+}
+void setInsentive(int insentive)
+{
+this.insentive=insentive;
+}
+int getInsentive()
+{
+
+
+return this.insentive;
+}
+int calIncome()
+	{
+	return this.salary+this.insentive;
+	}
+
+
+
+}
+
+class Address
+{
+int homeno;
+String taluka;
+Address(int homeno,String taluka)
+{
+this.homeno=homeno;
+this.taluka=taluka;
+}
+}
+class Demo
+{
+public static void main(String args[])
+{
+Employee emp=new Employee(10,25,"pooja",30000);
+Manager m=new Manager(15,30,"bali",40000,300);
+Salesman s=new Salesman(20,35,"komal",50000,400);
+
+
+emp.totalsalary();
+m.calIncome();
+s.calIncome();
+System.out.println("total income of Employee:"+emp.totalsalary());
+System.out.println("total income of manager :"+m.calIncome());
+System.out.println("total income of salesman:"+s.calIncome());
+System.out.println("homeno="+emp.Add.homeno);                //composition
+System.out.println("taluka="+emp.Add.taluka);
+
+
+}
+
+
+
+
+
+}
