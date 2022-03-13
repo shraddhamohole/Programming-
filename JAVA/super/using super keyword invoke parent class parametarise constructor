@@ -1,0 +1,32 @@
+//using super keyword invoke parent class parametarise constructor
+class Person
+{
+String name;
+String add;
+Person(String name,String add)
+{
+this.name=name;
+this.add=add;
+}
+}
+
+class Student extends Person
+{
+int id;
+Student(String name,String add,int id)
+{
+super(name,add);
+this.id=id;
+}
+void display()
+{
+System.out.println(id+" "+name+" "+add);
+}
+}
+class Test{
+public static void main(String args[])
+{
+Student s=new Student("shraddha","dhandarphal",1);
+s.display();
+}
+}
