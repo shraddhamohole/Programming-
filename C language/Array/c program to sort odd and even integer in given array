@@ -1,0 +1,32 @@
+// c program to sort odd and even integer in given array
+#include<stdio.h>
+void main()
+{
+	int even=0,odd=0,i, a[100],n;
+	printf("enter size of array\n");
+
+	scanf_s("%d",&n);
+	printf("enter array element\n");
+	for(i=0;i<n;i++)
+	{
+		scanf_s("%d",&a[i]);
+	}
+	for(i=0;i<n;i++)
+	{
+	
+	if(a[i]%2==0)
+	{
+		printf("\t%d",a[i]);
+		
+	}
+
+	}
+	for(i=0;i<n;i++)
+	{
+		if(a[i]%2!=0)
+		{
+	printf("\t%d",a[i]);
+
+		}
+	}
+}
