@@ -1,0 +1,40 @@
+//check whether the no is armstrong or not
+#include<stdio.h>
+void main()
+{
+	int n,temp,count,rem,i,fact,sum=0;
+	printf("enter the no");
+	scanf_s("%d",&n);
+	temp=n;
+	count=0;
+	while(temp!=0)
+	{
+		temp=temp/10;
+		count++;
+	}
+	temp=n;
+	while(temp!=0)
+	{
+		rem=temp%10;
+		i=1;
+		fact=1;
+		while(i<=count)
+		{
+			fact=fact*rem;
+			i++;
+		}
+		sum=sum+fact;
+			temp=temp/10;
+	}
+	if(n==sum)
+	{
+		printf("the number is armstrong");
+	}
+	else
+	{
+		printf("the no is not armstrong");
+	}
+
+}
+
+
