@@ -1,0 +1,35 @@
+//C program to return position of palindrom no in given array
+
+#include<stdio.h>
+void main()
+{
+	int n,num,rev,rem,a[100],i;
+	printf("enter size of array");
+	scanf_s("%d",&n);
+	printf("enter array element");
+	
+	for(i=0;i<n;i++)
+	{
+		scanf_s("%d",&a[i]);
+	}
+	for(i=0;i<n;i++)
+	{
+		rev=0;
+		rem=0;
+	num=a[i];
+	while(a[i]!=0)
+	{
+		rem=a[i]%10;
+		rev=rev*10;
+		rev=rev+rem;
+		a[i]=a[i]/10;
+	}
+	
+	if(num==rev)
+	{
+	printf("\n palindrome no is %d and their index  %d",num,i);
+	}
+	}
+	
+}
+
