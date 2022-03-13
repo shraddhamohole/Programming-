@@ -1,0 +1,18 @@
+//C program to print no of digit in given no
+#include <stdio.h>
+void main()
+{
+    int no;
+    int count = 0;
+    printf("Enter a number: ");
+    scanf_s("%d", &no);
+ 
+    while (no > 0) 
+	{
+        n =no/ 10;     
+        count=count+1;
+	}
+
+    printf("Number of digits: %d\n", count);
+	
+}
