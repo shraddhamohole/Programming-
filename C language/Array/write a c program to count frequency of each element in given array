@@ -1,0 +1,31 @@
+// write a c program to count frequency of each element in given array
+#include<stdio.h>
+void main()
+{
+	int n , a[100] , i ;
+	int j , count ;
+
+	printf("Enter Array Size: ");
+	scanf_s("%d",&n);	 
+		printf("Enter array element of array");
+	
+	
+	for( i=0 ; i<n ; i++ )
+	{
+	
+		scanf_s("%d",&a[i]);
+	}
+
+	
+	for( i=0 ; i<n ; i++ )
+	{
+		count = 0 ;
+		for( j=0 ; j<n ; j++ )
+		{
+			if( a[i] == a[j] )
+			{
+				count++;
+			}	
+		}	
+		printf("%d-%d\n",a[i],count);
+	}
