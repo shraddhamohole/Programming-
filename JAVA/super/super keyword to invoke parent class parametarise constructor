@@ -1,0 +1,25 @@
+class Parent
+{
+Parent(int a,int b)
+{
+System.out.println(a);
+System.out.println(b);
+}
+}
+class Child extends Parent
+{
+Child(int a,int b)
+{
+super(10,20);
+
+System.out.println(a);
+System.out.println(b);
+}
+}
+class Other
+{
+public static void main(String args[])
+{
+Child c=new Child(30,40);
+}
+}
