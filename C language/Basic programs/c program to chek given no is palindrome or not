@@ -1,0 +1,28 @@
+//c program to chek given no is palindrome or not
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+	int no,R=0,rev,num;
+	printf("enter the no\n");
+	scanf_s("%d",&no);
+	num=no;
+	while(no!=0)
+	{
+		rev=no%10;
+		R=R*10+rev;
+		no=no/10;
+	}
+	if(num==R)
+	{
+		printf(" given no is palindrome");
+	}
+	else
+	{
+		printf(" given no is not palindrome");
+	}
+	
+	_getch();
+
+}
