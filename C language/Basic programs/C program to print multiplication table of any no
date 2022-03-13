@@ -1,0 +1,16 @@
+//C program to print multiplication table of any no
+#include<stdio.h>""
+#include<conio.h>
+void main()
+{
+	int a=1,n;
+	printf("enter no to print their multiplication table\n");
+	scanf_s("%d",&n);
+	a=1;
+	while(a<=10)
+	{
+	printf("%d\t",a*n);
+	a++;
+	}
+}
+
