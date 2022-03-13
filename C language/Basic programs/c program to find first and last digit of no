@@ -1,0 +1,21 @@
+//c program to find first and last digit of no
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+	int no,firstdigit,lastdigit;
+	printf("enter the no:");
+    scanf_s("%d",&no);
+	lastdigit = no%10;
+	while(no>10)
+	{
+		no=no/10;
+		firstdigit=no;
+	
+	}
+		
+	printf("first  and last digit of given no is %d and %d",firstdigit,lastdigit);
+	
+	_getch();
+	
+}
