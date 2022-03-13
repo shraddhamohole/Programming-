@@ -1,0 +1,17 @@
+//C program sum of first and last digit of no
+#include<stdio.h>
+void main()
+{
+	int no,firstdigit,lastdigit,sum;
+	printf("enter  tne no:");
+	scanf_s("%d",&no);
+	lastdigit=no%10;
+	while(no>10)
+	{
+		no=no/10;
+		firstdigit=no;
+		sum=firstdigit+lastdigit;
+	}
+	
+	printf("\n sum of first and last digit of givn no is %d\t",sum);
+}
