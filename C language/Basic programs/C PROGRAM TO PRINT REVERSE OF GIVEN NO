@@ -1,0 +1,17 @@
+//C PROGRAM TO PRINT REVERSE OF GIVEN NO
+#include<stdio.h>
+void main()
+{
+	int no,R=0,rev;
+	printf("enter the no\n");
+	scanf_s("%d",&no);
+	while(no!=0)
+	{
+		rev=no%10;
+		R=R*10+rev;
+		no=no/10;
+	}
+	printf("reverse of given no is %d",R);
+
+ }
+
