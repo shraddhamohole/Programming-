@@ -1,0 +1,15 @@
+//C program to find sum of all natural no upto n
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+	int i,n,sum=0;
+	printf("enter no\n");
+	scanf_s("%d",&n);
+	for(i=1;i<=n;i++)
+	{
+		sum=sum+i;
+	}
+	printf("sum of natural no between 1 to %d is %d",n,sum);
+	_getch();
+}
