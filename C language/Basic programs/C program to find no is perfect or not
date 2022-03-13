@@ -1,0 +1,18 @@
+//C program to find no is perfect or not
+#include<stdio.h>
+void main()
+{
+	int no,i=1,sum=0;
+	printf("enter the no:");
+	scanf_s("%d",&no);
+	while(i<no)
+	{
+		if(no%i==0)
+			sum=sum+i;
+		i++;
+	}
+	if(sum==no)
+		printf("no is perfect");
+	else
+		printf("no is not perfect");
+}
