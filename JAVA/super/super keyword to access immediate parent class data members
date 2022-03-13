@@ -1,0 +1,37 @@
+//using super keyword access immediate parent class data members
+
+
+class Person
+{
+
+int age=10;
+
+}
+
+class Student extends Person
+{
+int age=20;
+void fun()
+{
+System.out.println(super.age);
+System.out.println(age);
+
+
+
+}
+
+
+}
+
+class Other
+{
+public static void main(String args[])
+{
+Student s=new Student();
+s.fun();
+
+}
+
+
+
+}
