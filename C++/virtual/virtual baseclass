@@ -1,0 +1,46 @@
+#include<iostream>
+
+class Power
+{
+public:
+	Power(int power)
+	
+	{
+		std::cout << "Power:" << power << std:: endl;
+    }
+	
+};
+
+class Scanner : virtual public Power
+{
+public:
+	Scanner(int scanner,int power) : Power(power)
+	{
+    	std::cout << "Scanner:" << scanner << std:: endl;
+	}
+};
+
+class Printer :  virtual public Power
+{
+public:
+	Printer(int printer, int power) : Power(power)
+	{
+	   std:: cout << "Printer:" << printer << std:: endl;
+	}
+};
+
+class Xerox :  public Scanner, public Printer
+{
+public:
+	Xerox(int scanner, int printer,int power) : Power (power), Scanner(scanner,power),Printer (printer,power)
+	{
+		std :: cout << "......." << std:: endl;
+	}
+	
+};
+
+int main()
+{
+	Xerox X (1,3,4);
+	return 0;
+}
