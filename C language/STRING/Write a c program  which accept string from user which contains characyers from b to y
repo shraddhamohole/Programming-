@@ -1,0 +1,25 @@
+//Write a c program  which accept string from user which contains characyers from b to y
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+    char str[100];
+    int i, j = 0;
+    printf("Please enter a string(Input String) :");
+    fgets(str, sizeof(str), stdin);
+
+    printf("Output string : ");
+    for (i = 0; str[i] != '\0'; i++)
+    {
+        if (str[i] >= 'b' && str[i] <= 'y')
+        {
+            printf("%c", str[i]);
+        }
+        else if (str[i] == 'a' || str[i] == 'z')
+        {
+            break;
+        }
+    }
+    _getch();
+}
