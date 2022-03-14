@@ -1,0 +1,13 @@
+STRING
+//print given string
+#include<stdio.h>
+void main()
+{
+	char a[100];
+	printf("please enter a name");
+	
+	fgets(a,sizeof(a),stdin);
+	printf("%s",a);
+
+
+}
