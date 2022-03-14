@@ -1,0 +1,49 @@
+//c program to count no of consonant vowels in the given string
+#include<stdio.h>
+#include<stdlib.h>
+int  main()
+{
+    int vowels=0,consonants=0,i=0;
+    char *str=NULL;
+    char ch;
+    int no_of_char=1;
+str=(char*)malloc(sizeof(char));
+    *(str+0)='\0';
+    printf("enter the string:\n");
+    do
+    {
+        scanf_s("%c",&ch);
+        if(ch!='\n')
+        {
+            no_of_char++;
+            str=(char*)realloc(str,no_of_char*sizeof(char));
+            *(str+i)=ch;
+            *(str+i+1)='\0';
+            i++;
+        }
+    }
+    while(ch!='\n');
+    i=0;
+   while((str+i)!='\0'&&(str+i)!='\n')
+		    
+		   
+		   {
+			    if((str+i)=='a'||(str+i)=='e'||(str+i)=='i'||(str+i)=='o'||(str+i)=='u'||(str+i)=='A'||(str+i)=='E'||(str+i)=='I'||(str+i)=='O'||(str+i)=='U')
+					
+					
+				vowels++;
+				   
+				else 
+				{
+					consonants++;
+				}
+				i++;
+	     }
+		
+		printf("%d\n",vowels);
+           printf("%d\n",consonants);
+ 
+    free(str);
+    
+}
+
