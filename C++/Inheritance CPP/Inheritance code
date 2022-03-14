@@ -1,0 +1,67 @@
+Inheritance CPP
+
+
+#include<iostream>
+#include<conio.h>
+
+class Demo
+{
+private: 
+	int a;
+public:
+	int b;
+	int c;
+
+	Demo(int a, int b, int c)
+	{
+		this->a=a;
+		this->b=b;
+		this->c=c;
+	}
+	void fun()
+	{
+		std::cout<<a<<std::endl<<b<<std::endl<<c;
+	}
+};
+
+class Test: protected Demo
+{
+public:
+	int x;
+	Test(int x)  : Demo(10,20,30)
+	{
+		this->x=x;
+	}
+
+	void gun()
+	{
+		std::cout<<x<<std::endl<<b<<std::endl<<c<<std::endl;
+	}
+};
+
+class Child : Test
+{
+public:
+	int y;
+	Child(int y) : Test(100)
+	{
+		this->y=y;
+	}
+	void bun()
+	{
+		std::cout<<b<<std::endl<<c<<std::endl<<x<<std::endl<<y;
+	}
+};
+
+int main()
+{
+	Demo d(10,20,30);
+	//d.fun();
+
+	Test t(40);
+	//t.gun();
+	Child c(50);
+	c.bun();
+
+	return 0;
+}
