@@ -1,0 +1,40 @@
+// c program to replace good name in mails
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    char * str = NULL;
+    char ch;
+    int i=0;
+    int no_of_char= 1;
+    
+   
+    str = (char*)malloc(sizeof(char));
+    *(str+0) = '\0 ';
+    printf("enter a string: ");
+    do {
+        scanf_s("%c",&ch);
+        if(ch != '\n')
+        {
+            no_of_char++;
+            str = (char*)realloc(str, no_of_char*sizeof(char));
+            *(str+i) = ch;
+            *(str+i+1) = '\0';
+            i++;
+        }
+    }    while(ch != '\n');
+printf("Hello ");
+for(i=0;*(str+i)!='\0';i++)
+{
+if(*(str+i)!=' ') 
+{
+printf("%c", *(str+i));
+}
+else
+{
+
+} 
+} 
+
+}
