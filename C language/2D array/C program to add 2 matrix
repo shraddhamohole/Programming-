@@ -1,0 +1,72 @@
+//C program to add 2 matrix
+
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+	int a[10][10], b[10][10], i, j, row, col,sum;
+	printf("how many rows are you want?\n");
+	scanf_s("%d", &row);
+	printf("how many column are you want?\n");
+	scanf_s("%d", &col);
+	printf("enter the first array elements\n");
+	for (i = 0; i < row; i++)
+	{
+		for (j = 0; j < col; j++)
+		{
+			scanf_s("%d", &a[i][j]);
+		}
+	}
+	printf("Array elements are\n");
+	for (i = 0; i < row; i++)
+	{
+		for (j = 0; j < col; j++)
+		{
+			printf("%d\t", a[i][j]);
+		}
+		printf("\n");
+	}
+	printf("second array\n");
+	printf("how many rows are you want?\n");
+	scanf_s("%d", &row);
+	printf("how many column are you want?\n");
+	
+	scanf_s("%d", &col);
+	printf("enter the second array elements\n");
+
+	for (i = 0; i < row; i++)
+
+		for (i = 0; i < row; i++)
+		{
+			for (j = 0; j < col; j++)
+			{
+				scanf_s("%d", &b[i][j]);
+			}
+		}
+	
+
+	for (i = 0; i < row; i++)
+
+
+	{
+		for (j = 0; j < col; j++)
+		{
+			printf("%d\t", b[i][j]);
+		}
+		printf("\n");
+	}
+	printf("Sum of entered matrices : \n"); 
+	for (i = 0; i < row; i++)
+	{
+		for (j = 0; j < col; j++)
+		{
+			sum = a[i][j] + b[i][j]; printf("%d\t", sum);
+		}
+		printf("\n");
+	}
+
+
+
+}
+6)C program to sub
