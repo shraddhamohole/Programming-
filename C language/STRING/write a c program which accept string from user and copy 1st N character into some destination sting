@@ -1,0 +1,41 @@
+// write a c program which accept string from user and copy 1st N character into some destination sting
+#include<stdio.h> 
+#include<conio.h> 
+void main()
+{ 
+	char str[100] ; 
+	int str1[100]; 
+	int size , i , j ; 
+	int count , digit ;
+
+printf("\n Enter a string : ");
+fgets( str, 100 , stdin ); 
+printf("\nEnter a digit: ");
+scanf_s("%d",&digit); 
+i = 0 ;
+count = 0 ;
+while( str[i] != '\n' )
+{
+	count++;
+	i++;
+} 
+if( digit <= count ) 
+{
+	i = 0 ;
+	while( i <= digit )
+	{
+		printf("%c",str[i]);
+		i++;
+	} 
+}
+else 
+{
+	printf("\ninvalid no digit");
+}
+}
+
+
+
+
+
+
