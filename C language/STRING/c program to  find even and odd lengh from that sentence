@@ -1,0 +1,48 @@
+// c program to  find even and odd lengh from that sentence
+
+
+
+
+
+#include<stdio.h>
+
+
+void main()
+{
+	char str[100] ;
+	int size , i ;
+	int count , odd , even ;
+
+	size = sizeof(str);
+
+	printf("Enter a string: ");
+	fgets( str , size , stdin );	
+
+	i = 0 ;
+	odd = 0 ;
+	even = 0 ;
+
+	
+	while( str[i] != '\n' )
+	{
+		while( str[i] == ' ' )
+		{
+			i++;
+		}	
+
+		count = 0 ;
+		while( str[i] != ' ' && str[i] != '\n' )
+		{
+			count++;
+			i++;
+		}	
+		
+		
+		
+		if( count != 0 )
+		{
+			if( count%2 == 0 )
+			{
+				even++;
+			}	
+
