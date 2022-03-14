@@ -1,0 +1,33 @@
+//C program to count no of alphabets spaces and words in given string
+#include<stdio.h>
+void main()
+{
+    char str[100];
+    int i, a=0,space=0, word=01;
+    printf("Please enter a string(Input String) :");
+    fgets(str, sizeof(str), stdin);
+
+    i = 0;
+    while (str[i] != '\0')
+    {
+        if(str[i]==' ')
+        {
+        space++;
+        }
+       else if(str[i] >= 'a' && str[i] <= 'z' || str[i] >='A' && str[i] <= 'Z')
+        {
+            a++;
+        }
+        else if(str[i]!=' '&& str[i]!='\0')
+        {
+           word++;
+         }
+        
+        i++;
+    }
+    printf("Spaces are : %d\n", space);
+    printf("alphabets are : %d\n",a);
+    printf("words in a string are  : %d\n", word);
+    
+}
+
