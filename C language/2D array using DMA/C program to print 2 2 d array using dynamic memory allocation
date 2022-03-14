@@ -1,0 +1,65 @@
+// C program to print 2 2 d array using dynamic memory allocation
+#include<stdio.h>
+#include<stdlib.h>
+void main()
+{
+	int **p=NULL;
+	int **p1=NULL;
+	int row=0,col,i,j;
+	
+	printf("enter no of rows:");
+	scanf_s("%d",&row);
+	printf("enter no of col:");
+	scanf_s("%d",&col);
+	p=(int **)malloc(row * sizeof(int));
+	
+	for(i=0;i<row;i++)
+	{
+		*(p+i)=(int *)malloc(col *sizeof(int));
+	}
+	printf("enter array element:\n");
+	
+	for(i=0;i<row;i++)
+	{
+		for(j=0;j<col;j++)
+		{
+			scanf_s("%d",*(p+i)+j);
+		}
+	}
+	for(i=0;i<row;i++)
+	{
+       for(j=0;j<col;j++)
+	   {
+		   printf("%d\t",*(*(p+i)+j));
+	   }
+	   printf("\n");
+	}
+	printf("second array\n");
+	printf("enter no of rows:\n");
+	scanf_s("%d", &row);
+	printf("enter no of col:\n");
+	scanf_s("%d", &col);
+	p1=(int **)malloc(row * sizeof(int));
+	for(i=0;i<row;i++)
+	{
+		*(p1+i)=(int *)malloc(col *sizeof(int));
+	}
+       printf("enter the second array elements\n");
+	   for(i=0;i<row;i++)
+	{
+		for(j=0;j<col;j++)
+		{
+			scanf_s("%d",*(p1+i)+j);
+		}
+	}
+	for(i=0;i<row;i++)
+	{
+       for(j=0;j<col;j++)
+	   {
+		   printf("%d\t",*(*(p1+i)+j));
+	   }
+	   printf("\n");
+	}
+}
+
+
