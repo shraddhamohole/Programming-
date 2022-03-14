@@ -1,0 +1,29 @@
+//C program to copy one array elements into another array
+#include<stdio.h>
+#include<stdlib.h>
+void main()
+{
+	int *p,*p1;
+	int n,i;
+	printf("enter size of array");
+	scanf_s("%d",&n);
+
+	p=(int*)malloc(n * sizeof(int));
+	p1=(int*)malloc(n * sizeof(int));
+	printf("enter array elements\n");
+	for(i=0;i<n;i++)
+	{
+		scanf_s("%d",p+i);
+	}
+	for(i=0;i<n;i++)
+	{
+		*(p1+i)=*(p+i);
+	}
+	printf("B array elements are\n");
+	for(i=0;i<n;i++)
+	{
+		printf("%d\n",*(p1+i));
+	}
+}
+
+
