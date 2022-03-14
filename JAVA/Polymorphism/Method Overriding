@@ -1,0 +1,156 @@
+class Employee
+{
+private int id;
+private String name;
+private String add;
+protected  int salary;
+void setID(int id)
+{
+this.id=id;
+
+}
+int getId()
+{
+return this.id;
+
+}
+void setName(String name)
+{
+
+this.name=name;
+
+}
+String getName()
+{
+return this.name;
+
+}
+
+void setAdd(String add)
+{
+
+this.add=add;
+
+}
+String getAdd()
+{
+return this.add;
+
+}
+void setSalary(int salary)
+{
+this.salary=salary;
+
+}
+int getSalary()
+{
+return this.salary;
+
+}
+
+Employee()
+{
+
+
+}
+Employee(int id,String name,String add,int salary)
+{
+this.id=id;
+this.name=name;
+this.add=add;
+this.salary=salary;
+
+
+
+}
+
+ void calculateSalary()
+{
+int totalsalary;
+totalsalary=this.salary;
+System.out.println("Employee salary=" +salary);
+
+}
+
+}
+
+
+
+class Manager extends Employee
+{
+private int bonus;
+Manager(int id,String name,String add,int salary,int bonus)
+{
+super(id,name,add,salary);
+this.bonus=bonus;
+
+
+}
+void setBonus(int bonus)
+{
+this.bonus=bonus;
+}
+int getBonus()
+{
+
+return this.bonus;
+}
+
+void calculateSalary()
+{
+int totalsalary;
+totalsalary=this.salary+this.bonus;
+System.out.println("managers salary="+totalsalary);
+}
+
+
+}
+
+
+
+class Salesman extends Employee
+{
+private int insentive;
+Salesman(int id,String name,String add,int salary,int insentive)
+{
+super(id,name,add,salary);
+this.insentive=insentive;
+}
+void setInsentive(int insentive)
+{
+this.insentive=insentive;
+}
+int getInsentive()
+{
+return this.insentive;
+
+}
+ void calculateSalary()
+{
+int totalsalary;
+totalsalary=this.salary+this.insentive;
+System.out.println("managers salary="+totalsalary);
+}
+
+}
+
+
+
+class DemoSalary
+{
+public static void main(String args[])
+{
+Employee emp=new Employee();
+Employee emp1=new Employee(10,"pooja","pune",3000);
+emp1.calculateSalary();
+Employee emp2=new Manager(10,"ram","nashik",4000,300);
+emp2.calculateSalary();
+Employee emp3=new Salesman(10,"sham","nagar",5000,400);
+emp3.calculateSalary();
+
+
+}
+
+
+
+}
