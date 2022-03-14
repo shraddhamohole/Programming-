@@ -1,0 +1,26 @@
+//signed and unsigned 
+
+#include<iostream>
+#include<conio.h>
+class demo
+{
+public:
+	int a;
+	void fun(signed a)
+	{
+	std::cout<<"signed fun value"<<std::endl;
+	std::cout<<a<<std::endl;
+	}
+	void fun (unsigned(a))
+	{
+	std::cout<<"unsigned fun value"<<std::endl;
+	std::cout<<a<<std::endl;
+	}
+};
+int main()
+{
+demo d;
+d.fun(unsigned(10));
+//d.fun(40);
+return 0;
+}
