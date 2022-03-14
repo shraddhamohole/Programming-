@@ -1,0 +1,38 @@
+#include<iostream>
+class parent
+{
+public:
+	int *p,a;
+	parent()
+	 {
+		p=(int*)malloc(sizeof(int));
+		a=10;
+	 }
+	 virtual~parent()
+	 {
+		std::cout<<"i am in parent destructor"<<std::endl;
+	 }
+};
+class child:public parent
+{
+	int *q,b;
+public:
+	child()
+	{
+     q=(int*)malloc(sizeof(int));
+		b=20;
+	}
+
+	virtual~child()
+	{
+		std::cout<<"i am in child destructor"<<std::endl;
+	}
+};
+int main()
+{
+	parent*p=new parent();
+	child *q=new child();
+	free(q);
+	delete(p);
+	return 0;
+}
