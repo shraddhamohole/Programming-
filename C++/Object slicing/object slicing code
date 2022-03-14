@@ -1,0 +1,28 @@
+#include<iostream>
+
+class A
+{
+double a;
+};
+
+class B
+{
+double b;
+};
+
+class C
+{
+double c;
+};
+
+class D:public A,public B,public C
+{
+double d;
+};
+
+int main()
+{
+D objd;
+std::cout<<sizeof(D)<<std::endl;
+return 0;
+}
