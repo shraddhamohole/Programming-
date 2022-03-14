@@ -1,0 +1,52 @@
+// c program to check whether the matrix is upper triangular or not
+#include<stdio.h>
+
+int main()
+{
+	int a[20][20];
+	int i, j;
+	int row, col;
+	int flag = 0;
+	printf("enter how many rows u want:");
+	scanf_s("%d", &row);
+	printf("enter how many columns u want :");
+	scanf_s("%d", &col);
+	printf("enter array elements:\n");
+	for (i = 0; i < row; i++)
+	{
+		for (j = 0; j < col; j++)
+		{
+			scanf_s("%d", &a[i][j]);
+		}
+	}
+	printf("array elements are:\n");
+	for (i = 0; i < row; i++)
+	{
+		for (j = 0; j < col; j++)
+		{
+			printf("%d\t", a[i][j]);
+		}
+		printf("\n");
+	}
+	for (i = 1; i < row; i++)
+	{
+		for (j = 0; j < i; j++)
+		{
+			if (a[i][j] != 0)
+			{
+				flag = 1;
+			}
+		}
+	}
+	if (flag == 0)
+	{
+		printf("matrix is upper triangular\n");
+	}
+	else
+	{
+		printf("matrix is not upper triangular");
+	}
+	
+}
+
+
