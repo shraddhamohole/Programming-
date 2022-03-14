@@ -1,0 +1,31 @@
+// c program which accept sentence from user and print no of word from the sentense
+#include<stdio.h>
+void main()
+{
+	char str[100];
+	int i=0, count=0;
+	printf("please enter the string\n");
+  printf("\n%s",str);
+	fgets(str,sizeof(str),stdin);
+	
+	while(str[i]!='\0')
+	{
+		while(str[i]==' ')
+	
+		{
+			i++;
+		}
+		
+		while(str[i]!=' ' && str[i]!='\0')
+		{
+			
+            i++;
+	   }
+        
+        count++;
+            
+	}
+    printf("\n%d",count);
+		
+
+}
