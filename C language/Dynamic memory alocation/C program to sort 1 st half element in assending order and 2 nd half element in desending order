@@ -1,0 +1,50 @@
+//C program to sort 1 st half element in assending order and 2 nd half element in desending order
+#include<stdio.h>
+#include<stdlib.h>
+void main()
+{
+	int *p;
+	int n,i,med,temp,j;
+	printf("enter array size\n");
+	scanf_s("%d",&n);
+	p=(int*)malloc(n * sizeof(int));
+	printf("array elemnts are");
+	for(i=0;i<n;i++)
+	{
+		scanf_s("%d",p+i);
+	}
+	med=n/2;
+	for(i=0;i<med-1;i++)
+	{
+		for(j=i+1;j<med;j++)
+		{
+			if(*(p+i)>*(p+j))
+			{
+				temp=*(p+j);
+				{
+					temp=*(p+i);
+					*(p+i)=*(p+j);
+					*(p+j)=temp;
+				}
+			}
+		}
+		//logic for sort second half in desendig order
+		for(i=med;i<n-1;i++)
+		{
+			for(j=i+1;j<n;j++)
+			{
+				if(*(p+i)<*(p+j))
+				{
+					temp=*(p+i);
+					*(p+i)=*(p+j);
+					*(p+j)=temp;
+				}
+			}
+		}
+		printf("after sorting\n");
+		for(i=0;i<n;i++)
+		{
+			printf("%d\n",*(p+i));
+		}
+	}
+}
