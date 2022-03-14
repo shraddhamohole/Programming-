@@ -1,0 +1,38 @@
+//C program to find unique element in given array using dynamic memory allocation
+
+#include<stdio.h>
+#include<stdlib.h>
+void main()
+{
+	int *p;
+	int i,j,n,count;
+	printf("enter size of array\n");
+	scanf_s("%d",&n);
+	p=(int*)malloc(n * sizeof(int));
+	printf("enter array elemnts\n");
+	for(i=0;i<n;i++)
+	{
+		scanf_s("%d",p+i);
+	}
+	for(i=0;i<n;i++)
+	{
+		count=0;
+		for(j=0;j<n;j++)
+		{
+			if(*(p+i)==*(p+j))
+			{
+				count++;
+			}
+		}
+		if(count==1)
+
+		{
+			printf("unique element:%d\n",*(p+i));
+		}
+	}
+}
+
+
+
+
+
