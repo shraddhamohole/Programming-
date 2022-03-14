@@ -1,0 +1,144 @@
+#include<iostream>
+#include<conio.h>
+class Employee
+{
+private:
+	char name[10];
+	int age;
+	int id;
+protected:
+	float sal;
+public:
+	Employee(const char* name="",int age=0,int id=0,float sal=0.0f)
+	{
+		strcpy_s(this->name,name);
+		this->age=age;
+		this->id=id;
+		this->sal=sal;
+	}
+	char* getname()
+	{
+		return this->name;
+	}
+	
+	int getage()
+	{
+		return this->age;
+	}
+	int getid()
+	{
+		return this->id;
+	}
+	float getsal()
+	{
+		return this->sal;
+	}
+	virtual float  calIncome()
+	{
+		return this->sal;
+	}
+	
+	virtual void display()
+	{
+		std::cout<<"Name:"<<this->name<<std::endl;
+		std::cout<<"Age:"<<this->age<<std::endl;
+		std::cout<<"Id:"<<this->id<<std::endl;
+		std::cout<<"Sal:"<<this->sal<<std::endl;
+	}
+};
+class Manager:public Employee
+{
+private:
+	float bonus;
+public:
+	Manager(const char* name="",int age=0,int id=0,float sal=0.0f,float bonus=0.0f):Employee(name,age,id,sal)
+	{
+		this->bonus=bonus;
+	}
+	float getbonus()
+	{
+		return this->bonus;
+	}
+	float calIncome()
+	{
+		return this->sal + this->bonus;
+	}
+	virtual void display()
+	{
+		Employee::display();
+		std::cout<<"Bonus:"<<this->bonus<<std::endl;
+	}
+
+};
+
+class Salseman:public Employee
+{
+private:
+     int insentive;
+public:
+	Salseman(const char* name="",int age=0,int id=0,float sal=0.0f,int insentive=0):Employee(name,age,id,sal)
+	{
+	  this->insentive=insentive;
+	}
+	int getinsentive()
+	{
+		return this->insentive;
+	}
+	float calIncome()
+	{
+		return this->sal+this->insentive;
+	}
+	void display()
+	{
+		Employee::display();
+		std::cout<<"Insentive:"<<this->insentive<<std::endl;
+	}
+};
+float totalsal(Employee* emp[],int n)
+{
+
+	float total=0.0f;
+	int i;
+	for(i=0;i<5;i++)
+	{
+		total=total+emp[i]->getsal();
+	}
+	return total;
+}
+float totalIncome(Employee* emp[],int n)
+{
+	float total=0.0f;
+	int i;
+	for(i=0;i<5;i++)
+	{
+		total=total+emp[i]->calIncome();
+	}
+	return total;
+}
+
+int main()
+{
+Employee* emp[5];
+int i;
+float totalsalary;
+float totalIn;
+emp[0]=new Manager("sima",22,101,30000,20000);
+emp[1]=new Employee("komal",19,102,40000);
+emp[2]=new Salseman("gaytri",25,103,50000,1000);
+emp[3]=new Employee("Piya",30,104,32000);
+emp[4]=new Manager("dipika",21,105,31000,30000);
+
+for(i=0;i<5;i++)
+{
+	emp[i]->display();
+	std::cout<<std::endl;
+}
+totalsalary=totalsal(emp,5);
+std::cout<<"total salary is: "<<totalsalary<<std::endl;
+
+totalIn=totalIncome(emp,5);
+std::cout<<"total Income is: "<<totalIn<<std::endl;
+
+	return 0;
+
+}
