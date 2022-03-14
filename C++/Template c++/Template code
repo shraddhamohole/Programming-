@@ -1,0 +1,35 @@
+#include<iostream>
+#include<conio.h>
+ template<class C, class D>
+ class Demo
+ {
+ public:
+	 C c;
+	 D d;
+	 template<class E,class F>
+	 void addition( E e, F f)
+	 {
+		 c=e+f;
+		 d=e-f;
+		 std::cout<<"addition of two Number="<<c<<std::endl;
+		 std::cout<<"substraction of two Number="<<d<<std::endl;
+	 }
+ };
+
+
+ template<class A, class B>
+ A add( A a, B b)
+ {
+	 A z;
+	 z=a+b;
+	 return z;
+ } 
+
+ int main()
+ {
+	 std::cout<<add<int,int>(10,30)<<std::endl;
+
+	 Demo<int ,int> d;
+	 d.addition<int ,int>(100,40);
+	 return 0;
+ }
