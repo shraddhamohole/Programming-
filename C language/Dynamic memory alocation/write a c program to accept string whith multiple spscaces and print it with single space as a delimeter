@@ -1,0 +1,53 @@
+//write a c program to accept string whith multiple spscaces and print it with single space as a delimeter
+#include <stdio.h>
+#include<stdlib.h>
+void main()
+{
+    char *p=NULL,choice;
+    int i,count,flag=0;
+    p=(char *)malloc(sizeof(char));
+    *(p+0)='\0';
+    i=0;
+    count =1;
+    printf("enter string\n");
+    do
+    {
+        scanf_s("%c",&choice);
+        if(choice!='\n')
+        {
+            count++;
+            p=(char *)realloc(p,count*sizeof(char));
+		         *(p+i)=choice;
+	         	*(p+i+1)='\0';
+	       	}
+		i++;
+		}while(choice!='\n' );
+
+i=0;
+		while(*(p+i)!='\0')
+		{
+		    	while(*(p+i)=='_')
+		    	{
+		    	    i++;
+		    	}
+		    	if(*(p+i)!='_' && *(p+i)!='\0')
+		    	{
+		    	    flag++;
+		    	    if(flag==1);
+		    	    else
+		    	    {
+		    	        printf("_");
+		    	    }
+		    	}
+	
+
+		while(*(p+i)!='_' && *(p+i)!='\0')
+		{
+			printf("%c",*(p+i));
+			i++;
+		}
+        
+	}
+}
+
+
