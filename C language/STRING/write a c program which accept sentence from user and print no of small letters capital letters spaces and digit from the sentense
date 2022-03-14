@@ -1,0 +1,43 @@
+//write a c program which accept sentence from user and print no of small letters capital letters spaces and digit from the sentense
+#include<stdio.h>
+
+void main()
+{
+	char str[100] ;
+	int size , i , cap , small , digit , space ;
+
+	printf("\nEnter a string: ");
+	fgets( str, size , stdin );		
+	i = 0 ;
+	cap = 0 ;
+	small = 0 ;
+	digit = 0 ;
+	space = 0 ;
+	while( str[i] != '\n' )
+	{
+		if( str[i] >= '0' && str[i] <= '9' )
+		{
+			digit++;
+		}	
+		else if( str[i] >= 'a' && str[i] <= 'z' )
+		{
+			small++;
+		}	
+		else if( str[i] >= 'A' && str[i] <= 'Z' )
+		{
+			cap++;
+		}	//end else-if
+		else if( str[i] == '_' )
+		{
+			space++;	
+		}	//end else-if
+		i++;
+	}	//end while
+
+	printf("\nCapital character in string => %d",cap);
+	printf("\nSmall character in string => %d",small);
+	printf("\nDigits in string => %d",digit);
+	printf("\nSpaces in string => %d",space);
+
+	
+}
