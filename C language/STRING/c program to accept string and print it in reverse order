@@ -1,0 +1,33 @@
+//c program to accept string and print it in reverse order
+
+
+
+#include<stdio.h>
+
+
+void main()
+{
+	char str[100];
+	int size , i , count ;
+	printf("\nEnter a string: ");
+	fgets(str,100,stdin);
+	i = 0 ;
+	count = 0 ;
+	while( str[i] != '\n' )
+	{
+		count++;
+		i++;
+	}	
+
+	i = count ;
+	printf("\nThe reverse string is");
+	while( str[i] > 0 )
+	{
+		printf("%c",str[i]);
+		i--;
+	}
+
+
+}	
+
+
