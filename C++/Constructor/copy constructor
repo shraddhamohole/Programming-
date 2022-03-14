@@ -1,0 +1,83 @@
+#include<iostream>
+class demo
+{
+public:
+int a,b,*p;
+
+public:
+	demo()
+	{
+
+
+	}
+	demo(int x,int y,int z)
+	{
+this->a=x;
+this->b=y;
+this->p=(int*)malloc(sizeof(int));
+*(this->p)=z;
+    }
+
+	demo (demo& other)
+	{
+this->a=other.a;
+this->b=other.b;
+this->p=(int*)malloc(sizeof(int));
+*(this->p)=*(other.p);
+
+	}
+
+	demo operator=(demo& other)
+	{
+this->a=other.a;
+this->b=other.b;
+this->p=(int*)malloc(sizeof(int));
+*(this->p) = *(other.p);
+ return *this;
+	}
+
+
+	void display()
+	{
+		std::cout<<this->a<<std::endl<<this->b<<std::endl;
+	}
+
+
+};
+int main()
+{
+	std::cout<<"d1"<<std::endl;
+	demo d1(10,20,30);
+	d1.display();
+	demo d2(d1);  //user defn copy constructor
+
+	d2.display();
+	std::cout<<std::endl;
+
+	d2.a++;
+	d2.b++;
+	(*(d2.p))++;
+	d1.display();
+	std::cout<<std::endl;
+    d2.display();
+
+	std::cout<<std::endl;
+	demo d3=d1;
+	d3.display();
+
+	std::cout<<"d4"<<std::endl;
+	demo d4;
+	d4=d1;     //assignment operator
+	d4.a++;
+	d1.b++;
+	(*(d4.p))++;
+
+	std::cout<<"d4"<<std::endl;
+	d4.display();
+	std::cout<<std::endl;
+	std::cout<<"d1"<<std::endl;
+	d1.display();
+	std::cout<<std::endl;
+}
+
+
