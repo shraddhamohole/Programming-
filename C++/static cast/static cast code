@@ -1,0 +1,59 @@
+#include<iostream>
+class A
+{
+public:
+	double a;
+
+
+
+
+};
+
+class B
+{
+public:
+	double b;
+
+
+};
+
+class C
+{
+public:
+double c;
+
+};
+
+class D:public A,public B,public C
+{
+
+public:
+double d;
+
+};
+int main()
+{
+D objd;
+
+A* pa = &objd;
+std::cout<<pa->a<<std::endl;;
+
+B* pb = &objd;
+std::cout<<pb->b<<std::endl;
+
+C* pc = &objd;
+std::cout<<pc->c<<std::endl;
+
+D*pd=static_cast<D*>(pb);
+
+std::cout<<pd->a<<std::endl;
+
+std::cout<<pd->b<<std::endl;
+
+std::cout<<pd->c<<std::endl;
+
+std::cout<<pd->d<<std::endl;
+
+return 0;
+
+}
