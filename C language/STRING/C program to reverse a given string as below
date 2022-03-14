@@ -1,0 +1,37 @@
+//C program to reverse a given string as below
+
+
+#include<stdio.h>
+void main()
+{
+	int i,temp,temp1;
+
+	char str[100];
+	printf("enter string\n");
+		fgets(str,100,stdin );
+	i=0;
+	while(str[i]!='\n')
+	{
+		while(str[i]==' ')
+		{
+			printf(" ");
+		i++;
+		}
+	
+	temp=i;
+	while(str[i]!=' '&&str[i]!='\n')
+	{
+		i++;
+	}
+	temp1=i-1;
+	while(temp1>=temp && str[temp1]!='\n')
+	{
+		printf("%c",str[temp1]);
+			temp1--;
+	}
+	}
+}
+
+
+
+
