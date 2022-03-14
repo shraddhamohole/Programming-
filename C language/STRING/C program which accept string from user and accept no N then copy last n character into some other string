@@ -1,0 +1,19 @@
+//C program which accept string from user and accept no N then copy last n character into some other string
+#include<stdio.h>
+int main() 
+{
+char str[100],str1[100],i=0;
+printf("please enter the first string\n");
+printf("\n%s", str);
+fgets(str,sizeof(str),stdin);
+while(str[i]!='\0')
+{
+       
+        str1[i]=str[i];
+    i++;
+   }
+   
+  str1[i]!='\0';
+    printf("\ncopy stringis:%s\n",str1);
+        return 0;
+    }
