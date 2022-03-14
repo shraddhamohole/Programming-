@@ -1,0 +1,36 @@
+//C program to find position of palindrom no using dynamic memory allocation
+#include<stdio.h>
+#include<stdlib.h>
+void main()
+{
+	int *p;
+	int n,num,rev,rem,i;
+	
+	printf("enter size of array\n");
+	scanf_s("%d",&n);
+	p=(int*)malloc(n * sizeof(int));
+	printf("enter no\n");
+	for(i=0;i<n;i++)
+	{
+		scanf_s("%d",p+i);
+	}
+	for(i=0;i<n;i++)
+	{
+		rev=0;
+		rem=0;
+		num=*(p+i);
+		while(*(p+i)!=0)
+		{
+			rem=*(p+i)%10;
+			rev=rev*10;
+			rev=rev+rem;
+			*(p+i)=*(p+i)/10;
+		}
+		if(num==rev)
+		{
+	printf(" %d palindrome no is on index %d\n",num,i);
+		}
+	}
+	
+}
+
