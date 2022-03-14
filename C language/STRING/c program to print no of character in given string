@@ -1,0 +1,20 @@
+//c program to print no of character in given string
+
+#include<stdio.h>
+int main()
+{
+int i=0,cnt=0;
+char str[100];
+printf("please enter a string with multiple spaces\n");
+fgets(str, 100, stdin);
+while(str[i]!='\0')
+{
+if(str[i]!=' ' && str[i]!='\n' && str[i]!='\t')
+{
+cnt++;
+}
+i++;
+}
+printf("count number of char in given string are:%d",cnt);
+return 0;
+}
