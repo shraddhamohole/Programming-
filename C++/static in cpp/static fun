@@ -1,0 +1,27 @@
+#include<iostream>
+class demo
+{
+public:
+	int a;
+	static int b;
+	void fun()
+	{
+		std::cout<<a<<std::endl;
+		std::cout<<b<<std::endl;
+	}
+	static void gun()
+	{
+		std::cout<<b<<std::endl;
+	
+	}
+
+};
+int demo::b=10;
+int main()
+{
+	demo d;
+	d.fun();
+	d.gun();
+
+	return 0;
+}
