@@ -1,0 +1,33 @@
+// c program to accept string from user and print as it is using dynamic memory allocation
+#include<stdio.h>
+#include<stdlib.h>
+void main()
+{
+	char *p,choice;
+	int i,count;
+	p=(char *)malloc(sizeof(char));
+	*(p+0)='\0';
+	i=0;
+	count=1;
+	printf("enter a string\n");
+	do
+	{
+		scanf_s("%c",&choice);
+	if(choice!='\n')
+	{
+		count++;
+		p=(char *)realloc(p,count*sizeof(char));
+		*(p+i)=choice;
+		*(p+i+1)='\0';
+	}
+	i++;
+	}while(choice!='\n');
+	i=0;
+		while(*(p+i)!='\0')
+		{
+			printf("%c",*(p+i));
+			i++;
+		}
+	}
+
+
