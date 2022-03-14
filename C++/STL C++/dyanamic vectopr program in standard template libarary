@@ -1,0 +1,24 @@
+
+dyanamic vectopr program in standard template libarary
+#include<iostream>
+#include<vector>
+
+int main()
+{
+
+std::vector<std::vector<int>>v(3,std::vector<int>(3,-1));
+
+for(int i=0;i<3;i++)
+{
+for(int j=0;j<3;j++)
+{
+std::cout<<v[i][j]<<"\t";
+
+}
+std::cout<<std::endl;
+}
+return 0;
+}
+
+
+
