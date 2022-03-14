@@ -1,0 +1,56 @@
+//print word from the position
+
+#include<stdio.h>
+
+void main()
+{
+	char str[100] ;
+	int size , i , count ;
+	int number;
+
+	
+
+	printf("\nEnter a string: ");
+	fgets(str,100,stdin);
+
+
+	printf("\nEnter a position: ");
+	scanf_s("%d",&number);
+
+	i = 0 ; 
+	count = 0 ;
+	while( str[i] != '\n' )
+	{
+		while( str[i] == ' ' )
+		{
+			i++;
+		}	
+
+		if( str[i] != ' ' && str[i] != '\n' )
+		{
+			count++;
+		}	
+
+		while( str[i] != ' ' && str[i] != '\n' )
+		{
+			if( count == number )
+			{
+				printf("%c",str[i]);
+			}	
+			i++;
+		}	
+	}
+	
+
+	
+}			{
+				odd++;
+			}	
+		}	
+	}	
+	
+	printf("\nEven => %d",even);
+	printf("\nodd => %d",odd);
+	
+	
+}	
