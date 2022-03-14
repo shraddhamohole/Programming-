@@ -1,0 +1,32 @@
+// write a c program to replace space with ‘$’ in given string
+#include<stdio.h>
+int main()
+{
+	char str[100];
+	int i=0;
+	printf("please enter the string\n");
+  
+	fgets(str,sizeof(str),stdin);
+	printf("string is %s\n");
+	while(str[i]!='\0')
+	{
+		while(str[i]==' ')
+	
+		{
+			i++;
+		}
+		
+		while(str[i]!=' ' && str[i]!='\0')
+		{
+			printf("%c",str[i]);
+		i++;
+	   }
+	}
+	printf("$");
+		
+	return 0;
+}
+
+
+
+
