@@ -1,0 +1,37 @@
+#include<iostream>
+namespace A
+{
+	int a=10;
+	int b=20;
+}
+
+namespace B
+{
+	int c=30;
+	int d=40;
+}
+int main()
+{
+	using A::a;
+	std::cout<<a<<std::endl;
+	using B::c;
+	std::cout<<c<<std::endl;
+}
+
+
+
+
+2// NESTED NAMESPACE PROGRAM:-
+#include<iostream>
+namespace A
+{
+	int x=10;
+	namespace B
+	{
+		int y=20;
+	}
+}
+int main()
+{
+	std::cout<<A::B::y<<std::endl;
+}
