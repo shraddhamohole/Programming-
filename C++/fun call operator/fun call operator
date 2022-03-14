@@ -1,0 +1,17 @@
+#include<iostream>
+class demo
+{
+public:
+	demo& operator()()
+	{
+		std::cout<<"hellow world";
+		return *this;
+	}
+};
+int main()
+{
+	demo d; 
+	d()();
+	
+	return 0;
+}
