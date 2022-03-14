@@ -1,0 +1,30 @@
+//C program to accept string with multiple spaces and print it in single space
+
+#include<stdio.h>
+void main()
+{
+	char a[100];
+	int i=0;
+	printf("please enter name");
+	fgets(a,100,stdin);
+	printf("string is %s\n",a);
+	while(a[i]!='\0')
+	{
+		while(a[i]==' ')
+	
+		{
+			i++;
+		}
+		
+		while(a[i]!=' ' && a[i]!='\0')
+		{
+			printf("%c",a[i]);
+		i++;
+	   }
+	}
+	printf(" ");
+		
+	
+}
+
+		
