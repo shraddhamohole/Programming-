@@ -1,0 +1,34 @@
+//c program to separate even and odd int in given array by using dynamic memory allocation
+#include<stdio.h>
+void main()
+{
+	int even=0,odd=0,i,n;
+	int *p;
+	printf("enter size of array\n");
+
+	scanf_s("%d",&n);
+	p= (int *)malloc(n * sizeof(int)); 
+	printf("enter array element\n");
+	for(i=0;i<n;i++)
+	{
+		scanf_s("%d",p+i);
+	}
+	for(i=0;i<n;i++)
+	{
+	
+	if(*(p+i)%2==0)
+	{
+		printf("%d\t",*(p+i));
+		
+	}
+
+	}
+	for(i=0;i<n;i++)
+	{
+		if(*(p+i)%2!=0)
+		{
+	printf("%d\t",*(p+i));
+
+		}
+    }
+    }
