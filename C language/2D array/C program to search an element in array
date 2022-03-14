@@ -1,0 +1,47 @@
+//C program to search an element in array
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+	int a[10][10], i, j, row, col, search, count = 0;
+	printf("how many rows are you want?\n");
+	scanf_s("%d", &row);
+	printf("how many column are you want?\n");
+	scanf_s("%d", &col);
+	printf("enter the array elements\n");
+	for (i = 0; i < row; i++)
+	{
+		for (j = 0; j < col; j++)
+		{
+			scanf_s("%d", &a[i][j]);
+		}
+	}
+	printf("Array elements are\n");
+	for (i = 0; i < row; i++)
+	{
+		for (j = 0; j < col; j++)
+		{
+			printf("%d\t", a[i][j]);
+		}
+		printf("\n");
+	}
+	printf("please enter the element for search:\n");
+	scanf_s("%d", &search);
+	for (i = 0; i < row; i++)
+	{
+		for (j = 0; j < col; j++)
+		{
+			if (a[i][j] == search)
+			{
+				count++;
+			}
+		}
+	}
+	if (count == 0)
+		printf("serach is not found\n");
+	else
+		printf(" search found at position \n",i,j);
+	return 0;
+}
+
+
