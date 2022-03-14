@@ -1,0 +1,40 @@
+//c program to count no of char in given string
+
+#include<stdio.h>
+#include<stdlib.h>
+void main()
+{
+	char *p=NULL,choice;
+	int i,count;
+	p=(char *)malloc(sizeof(char));
+	    *(p+0)='\0';
+    i=0;
+    count =1;
+    printf("enter string\n");
+    do
+    {
+        scanf_s("%c",&choice);
+         if(choice!='\n')
+        {
+            count++;
+            p=(char *)realloc(p,count*sizeof(char));
+		         *(p+i)=choice;
+	         	*(p+i+1)='\0';
+	       	}
+		i++;
+		}while(choice!='\n' );
+
+	i=0;
+count =0;
+	while(*(p+i)!='\0')
+	{
+	if(*(p+i)>='a' && *(p+i)<='z'|| *(p+i)>='A' && *(p+i)<='Z')
+	{
+		count++;
+	}
+	i++;
+	}
+	printf("\n no of character in given string=%d",count);
+}
+
+
