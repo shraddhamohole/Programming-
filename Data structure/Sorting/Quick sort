@@ -1,0 +1,73 @@
+//*Question=write a program of quick sort using c.
+//Name=mohole shraddha nitin
+//*Batch=PPA9.
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<conio.h>
+
+void quick_sort(int a[],int L,int H)
+{
+	int pivot=a[L];
+	int temp;
+	int low=L+1;
+	int high=H;
+
+	while(low<=high)
+	{
+		while(a[low]<pivot)
+		{
+			low++;
+		}
+		while(a[high]>pivot)
+		{
+			high--;
+		}
+		if(low<=high)
+		{
+			temp=a[low];
+			a[low]=a[high];
+			a[high]=temp;
+			low++;
+			high--;
+		}
+    }
+	temp=a[L];
+	a[L]=a[high];
+	a[high]=temp;
+
+	if(L<high)
+	{
+		quick_sort(a,L,high-1);
+	}
+	if(low<H)
+	{
+		quick_sort(a,low,H);
+	}
+}
+
+void main()
+{
+	int n,i;
+	int a[100];
+	printf("how many elements do you want:\n");
+	scanf_s("%d",&n);
+	printf("enter the elements:\n");
+	for(i=0;i<n;i++)
+	{
+		scanf_s("%d",&a[i]);
+	}
+	printf("unsorted array are:\n");
+	for(i=0;i<n;i++)
+	{
+		printf("%d\t\n",a[i]);
+	}
+	quick_sort(a,0,n-1);
+
+	printf("sorted array are:\n");
+	for(i=0;i<n;i++)
+	{
+		printf("%d\t",a[i]);
+	}
+	
+}
