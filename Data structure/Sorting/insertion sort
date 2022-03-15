@@ -1,0 +1,43 @@
+#include<stdio.h>
+void insertionsort(int arr[],int n)
+{
+	int empty,i,temp;
+	for(i=1;i<n;i++)
+	{
+		temp=arr[i];
+		empty=i;
+		while(empty>0 && arr[empty-1]>temp)
+		{
+			arr[empty]=arr[empty-1];
+			empty--;
+		}
+		arr[empty]=temp;
+	}
+}
+	
+void main()
+{
+	int n,i;
+int arr[100];
+printf("How many elements:-");
+	scanf_s("%d",&n);
+printf("please enter array elements\n");
+for(i=0;i<n;i++)
+{
+	scanf_s("%d",&arr[i]);
+}
+printf("unsorted array elements are\n");
+for(i=0;i<n;i++)
+{
+	printf("%d\t",arr[i]);
+}
+printf("\n");
+insertionsort( arr, n);
+
+printf("sorted array elements are\n");
+for(i=0;i<n;i++)
+{
+	printf("%d\t",arr[i]);
+}
+printf("\n");
+}
