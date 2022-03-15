@@ -1,0 +1,223 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct node
+{
+	int data;
+	struct node* next;
+};
+struct node* createnode()
+{
+	int a;
+	struct node* newnode = NULL;
+	newnode = (struct node*)malloc(sizeof(struct node));
+	if (newnode == NULL)
+	{
+		printf("memory are not allocate");
+	}
+	else
+	{
+		printf("enter the value of data \n");
+		scanf_s("%d",&a);
+		newnode->data = a;
+		newnode->next = NULL;
+	}
+	return newnode;
+}
+
+void createlinkedlist(struct node** head)
+{
+	struct node* tempnode = NULL;
+	struct node* travnode = *head;
+	tempnode = createnode();
+	if (*head == NULL)
+	{
+		*head = tempnode;
+	}
+	else
+	{
+		while (travnode->next != NULL)
+		{
+			travnode = travnode->next;
+		}
+		travnode->next = tempnode;
+	}
+};
+
+insertfrist(struct node**head)
+{
+	struct node* tempnode = NULL;
+	tempnode = createnode();
+	tempnode->next = *head;
+	*head = tempnode;
+}
+
+void insertatlast(struct node** head)
+{
+	createlinkedlist(head);
+}
+
+int countnode(struct node* head)
+{
+	int count = 0;
+	while (head != NULL)
+	{
+		count++;
+		head = head->next;
+	}
+	return count;
+}
+int insertatpos(struct node** head)
+{
+	int i,pos,n;
+	struct node* tempnode = NULL;
+	struct node* travnode = *head;
+	printf("enter your position");
+	scanf_s("%d",&pos);
+	n = countnode;
+	if (pos == 1)
+	{
+		insertfrist(head);
+	}
+	else if(pos == n + 1)
+	{
+		insertatlast(head);
+	}
+	else if(pos < 1 || pos > n + 1)
+	{
+		printf("invalid choice ");
+		insertatpos(head);
+	}
+	else
+	{
+	tempnode = createnode();
+	
+	for (i = 1; i < pos - 1; i++)
+	{
+		travnode = travnode->next;
+	}
+	tempnode->next = travnode->next;
+	travnode->next = tempnode;
+	}
+}
+
+deleteatfirst(struct node**head)
+{
+	struct node* tempnode = *head;
+	if (*head == NULL)
+	{
+		printf("linkedlist are not available\n");
+	}
+	else
+	{
+		*head = (*head)->next;
+		free(tempnode);
+	}
+}
+
+deleteatlast(struct node** head)
+{
+	struct node* tempnode = *head;
+	if (*head == NULL)
+	{
+		printf("linkedlist is not found");
+	}
+	else
+	{
+		while (tempnode->next->next != NULL)
+		{
+			tempnode = tempnode->next;
+		}
+		free(tempnode->next);
+		tempnode->next = NULL;
+	}
+}
+deleteposition(struct node** head)
+{
+	int pos, i,n;
+	n = countnode;
+	printf("enter the delete pos");
+	scanf_s("%d",&pos);
+	if (pos == 1)
+	{
+		deleteatfirst(head);
+	}
+	else if (pos == n)
+	{
+		deleteatlast(head);
+	}
+	else if (pos < 1 || pos > n)
+	{
+		printf("invalid choice");
+		deleteposition(head);
+	}
+	else
+	{
+		struct node* temp1 = *head;
+		struct node* temp2 = *head;
+		for (i = 1; i < pos - 1; i++)
+		{
+			temp1=temp1->next;
+		}
+		temp2 = temp1->next;
+		temp1->next = temp2->next;
+		free(temp2);
+	}
+	
+}
+ void display(struct node*head)
+{
+	if (head == NULL)
+	{
+		printf("linked list is empty\n");
+
+	}
+	else
+	{
+		while (head != NULL)
+		{
+			printf("%d=>",head->data);
+			head = head->next;
+		}
+	}
+}
+void main()
+{
+	int choice;
+	struct node* first = NULL;
+	
+		printf("1.createlinked\n");
+		printf("2.display\n");
+		printf("3.insertatfirst\n.");
+		printf("4.insertatlast");
+		printf("5.insertatpos\n");
+		printf("6.deleteatfirst\n");
+		printf("7.deleteatlast\n");
+		printf("8.deleteposition\n");
+		printf("0.exit\n");
+		do
+	{
+		printf("enter your choice \n");
+		scanf_s("%d",&choice);
+		switch (choice)
+		{
+		case 1:createlinkedlist(&first);
+				break;
+		case 2:display(first);
+				break;
+		case 3:insertfrist(&first);
+			break;
+		case 4:insertatlast(&first);
+			break;
+		case 5:insertatpos(&first);
+			break;
+		case 6:deleteatfirst(&first);
+				break;
+		case 7:deleteatlast(&first);
+			break;
+		case 8:deleteposition(&first);
+			break;
+		case 0:exit(0);
+				break;
+		}
+	} while (choice != NULL);
+}
