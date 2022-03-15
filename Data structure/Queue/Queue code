@@ -1,0 +1,78 @@
+#include<stdio.h> 
+#include<conio.h> 
+#define max 10 
+struct queue 
+{ 
+int a[max]; 
+int front; 
+int rear; 
+}; 
+void init_queue(struct queue * qptr) 
+{ 
+qptr -> front = -1; 
+qptr -> rear = -1; 
+} 
+int isfull(struct queue * qptr) 
+{ 
+return qptr -> rear == max-1; 
+} 
+int isempty(struct queue * qptr) 
+{ 
+return qptr -> rear == qptr -> front; 
+} 
+void insert(struct queue * qptr , int data) 
+{ 
+if(!isfull(qptr)) 
+{ 
+(qptr -> rear)++; 
+qptr -> a[qptr -> rear] = data; 
+} 
+else 
+{ 
+printf("queue is full \n"); 
+} 
+} 
+int delete(struct queue * qptr) 
+{ 
+int n; 
+if(!isempty(qptr)) 
+{ 
+(qptr -> front)++; 
+n = qptr -> a[qptr -> front]; 
+return n;
+}
+else 
+{ 
+printf("queue is empty \n"); 
+} 
+} 
+void main() 
+{ 
+struct queue q; 
+int data; 
+int choice; 
+init_queue(&q); 
+
+printf("1.insert \n"); 
+printf("2.delete\n"); 
+printf("0. exit \n"); 
+do{
+printf("enter your choice : "); 
+scanf_s("%d",&choice); 
+switch(choice) 
+{ 
+case 1 : printf("enter a data : "); 
+scanf_s("%d",&data); 
+insert(&q , data); 
+break; 
+case 2 :data=delete(&q); 
+printf("delete data is : %d \n",data); 
+break; 
+case 0 : printf("thank you"); 
+break; 
+default : printf("invalid choice \n"); 
+break; 
+} 
+}while(choice != 0); 
+
+}
