@@ -1,0 +1,99 @@
+#include<stdio.h>
+#include<conio.h>
+#define max 10
+
+struct STACK
+{
+	int a[10];
+	int top;
+};
+
+ void init_stack(struct STACK* stackptr)
+	{
+       stackptr -> top= -1;
+	}
+
+	int isfull(struct STACK* structptr)	
+		{
+			if(((structptr -> top) == max -1))
+			{
+				return 1;
+			}
+		else
+		   {
+			return 0;
+			}
+		}
+
+	int isempty(struct STACK* structptr)
+	{
+		if(((structptr -> top) == -1))
+		{
+			return 1;
+		}
+		else
+		{
+			return 0;
+		}
+	}
+	void push(struct STACK *stackptr, int data)
+		{
+			(stackptr -> top)++;
+			stackptr -> a[stackptr -> top] = data;
+		}
+
+	int pop(struct STACK* stackptr)
+	{
+		int n;
+		n = stackptr -> a[stackptr -> top];
+		(stackptr -> top)--;
+		return n;
+	}
+     
+void main()
+{
+	struct STACK stack;
+	int data;
+	int choice;
+	init_stack(&stack);
+	
+	
+	printf("1: push\n");
+	printf("2: pop\n");
+	printf("0: exit\n");
+	do{
+	printf("please enter u r choice: ");
+	scanf_s("%d", &choice);
+
+	switch(choice)
+	{
+	case 1: 
+		if(isfull(&stack))
+		{
+			printf("stack is full\n");
+	   }
+		else
+		{
+			printf("please enter element: \n");
+			scanf_s("%d", &data);
+			push(&stack, data);
+		}
+		break;
+	case 2: 
+		if(isempty(&stack))
+		{
+			printf("stack is empty\n");
+		}
+		else
+		{
+			data = pop(&stack);
+			printf("element is %d\n", data);
+		}
+		break;
+	case 0: printf("THANK YOU\n");
+		break;
+	default: printf("invalid choice\n");
+	}
+	}while(choice != 0);
+	
+}
