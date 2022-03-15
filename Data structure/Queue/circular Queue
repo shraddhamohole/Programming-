@@ -1,0 +1,90 @@
+#include<stdio.h>
+
+#define MAX 10
+struct circularqueue
+{
+int a[MAX];
+int front;
+int rear;
+};
+
+
+void init_circularqueue(struct circularqueue*queueptr)
+{
+	queueptr->front=MAX-1;
+	queueptr->rear=MAX-1;
+}
+ int isfull(struct circularqueue*queueptr)
+ {
+ return (queueptr->rear+1)% MAX==queueptr->front;
+ }
+
+ void insert(struct circularqueue*queueptr)
+ {
+	 int n;
+	  printf("please enter your element to insert\n");
+	   scanf_s("%d",&n);
+   if(isfull(queueptr))
+   {
+   printf("queue is full\n");
+   }
+   else
+   {
+	   queueptr->rear=((queueptr->rear)+1)%MAX;
+   queueptr->a[queueptr->rear]=n;
+   
+   }
+ 
+ }
+ int  isempty(struct circularqueue*queueptr)
+ {
+   return queueptr->rear==queueptr->front;
+ }
+
+ int delet(struct circularqueue*queueptr)
+ {
+	 int n;
+ if(isempty(queueptr))
+ {
+  printf("queue is empty");
+ }
+ else
+ {
+  
+  n=queueptr->a[queueptr->front];
+  queueptr->front=((queueptr->front)+1)%MAX;
+ printf("deleted element is %d",n);
+ return n;
+ }
+ }
+
+
+
+void main()
+ {
+	 int choice;
+	struct circularqueue queue;
+	init_circularqueue(&queue);
+
+	do{
+	printf("1.insert queue element\n");
+	printf("2.delete queue element\n");
+	printf("0.EXIT\n");
+
+	printf("please enter your choice\n");
+	scanf_s("%d",&choice);
+
+	switch(choice)
+	{
+	case 1:insert(&queue);
+		break;
+	case 2:delet(&queue);
+		break;
+
+	case 0:printf("EXIT\n");
+		break;
+	default:printf("invalid choice\n");
+	}
+	}while(choice!=0);
+	
+}
