@@ -1,0 +1,137 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+
+struct node
+ {
+struct node*left;
+int data;
+struct node*right;
+};
+
+
+struct node*createnode()
+{
+int value;
+struct node*newnode=NULL;
+newnode=(struct node*)malloc(sizeof(struct node));
+
+	if(newnode==NULL)
+	{
+	printf("memory not allocated\n");
+
+	}
+	else
+	{
+	printf("please enter your value\n");
+	scanf_s("%d",&value);
+	newnode->left=NULL;
+	newnode->data=value;
+	newnode->right=NULL;
+	}
+
+	return newnode;
+}
+
+void createbst(struct node**root)
+{
+	struct node*tempnode=NULL;
+struct node*newnode=NULL;
+
+newnode=createnode();
+if(*root==NULL)
+{
+*root=newnode;
+}
+else
+{
+while(tempnode!=NULL)
+{
+	if(newnode->data < tempnode->data)
+  {
+	  if(tempnode->left==NULL)
+	    {
+	       tempnode->left=newnode;
+	       break;
+	    }
+	 else
+	    {
+	    tempnode=tempnode->left;
+	    }
+ }
+	 else
+	 {
+	         if(tempnode->right==NULL)
+	   {
+	        tempnode->right=newnode;
+	       break;
+	   }
+	    else
+	   {
+	   tempnode=tempnode->right;
+	   }
+	 }
+	}
+  }
+ }
+void preorder(struct node* root)
+{
+	if(root!=NULL)
+	{
+		printf("%d",root->data);
+		preorder(root->left);
+		preorder(root->right);
+	}
+}
+void inorder(struct node*left)
+{
+	if(left!=NULL)
+	{
+		printf("%d",left->left);
+		preorder(left->data);
+		preorder(left->right);
+	}
+}
+void postorder(struct node*right)
+{
+	if(right!=NULL)
+	{
+		printf("%d",right->right);
+		preorder(right->left);
+		preorder(right->data);
+	}
+}
+
+		
+int main()
+{
+	struct node*root=NULL;
+  int choice;
+ 
+  printf("1.createbst\n");
+  printf("2.displaybst\n");
+  printf("3.preorder\n");
+  printf("4.inorder\n");
+  printf("5.postorder\n");
+  do{
+
+
+  printf("please enter your choice\n");
+	  scanf_s("%d",&choice);
+  switch(choice)
+  {
+  case 1:createbst(&root);
+	  break;
+  case 2:preorder(root);
+	  break;
+  case 3:inorder(root);
+	 break;
+  case 0:printf("exit\n");
+	  break;
+  default:printf("invalid choice\n");
+
+  }
+  }while(choice!=0);
+  
+  
+  }
