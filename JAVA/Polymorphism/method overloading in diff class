@@ -1,0 +1,40 @@
+class Addition
+{
+void sum(int x,int y)
+{
+int z;
+z=x+y;
+System.out.println("addition is"+z);
+
+}
+
+
+}
+class Addition2
+{
+
+void sum(int x,int y,int w)
+{
+int z;
+z=x+y+w;
+System.out.println("addition is"+z);
+
+}
+
+
+}
+
+class Addition3
+{
+public static void main(String args[])
+{
+Addition add=new Addition();
+Addition2 add2=new Addition2();
+
+add.sum(10,20);
+add2.sum(40,50,60);
+
+}
+
+
+}
