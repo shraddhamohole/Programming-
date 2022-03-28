@@ -1,0 +1,39 @@
+class Outerclass
+{
+
+
+void gun()
+{
+
+System.out.println("komal");
+
+}
+
+static class Innerclass
+{
+
+
+static void fun()
+{
+System.out.println("shraddha");
+}
+
+public static void main(String args[])
+{
+
+
+
+}
+}
+
+
+public static void main(String args[])
+{
+Outerclass out=new Outerclass();
+Outerclass.Innerclass i=new Outerclass.Innerclass();
+i.fun();
+out.gun();
+}
+
+
+}
