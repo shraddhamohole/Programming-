@@ -1,0 +1,37 @@
+class Employee
+{
+
+int id;
+String name;
+void calculatesalary()
+{
+
+System.out.println("salary of Employee");
+
+}
+
+
+
+}
+
+class Cal_salary
+{
+public static void main(String args[])
+{
+Employee komal=new Employee()
+{
+
+void calculatesalary()
+{
+
+System.out.println("total salary");
+
+
+}
+
+
+};
+
+komal.calculatesalary();
+}
+}
