@@ -1,0 +1,35 @@
+class Demo
+{
+
+
+void fun()
+{
+int a=10;
+  class Test
+ {
+
+
+
+  void gun()
+  {
+
+   System.out.println(+a);
+
+   }
+  
+
+ }
+ Test T=new Test();
+  T.gun();
+ 
+ 
+}
+public static void main(String args[])
+{
+Demo D=new Demo();
+D.fun();
+
+
+}
+
+}
