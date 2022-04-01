@@ -1,0 +1,17 @@
+abstract class Demo
+{
+abstract void fun();
+}
+
+class Test extends Demo
+{
+void fun()
+{
+System.out.println("Hello world");
+}
+public static void main(String args[])
+{
+Test t=new Test();
+t.fun();
+}
+}
