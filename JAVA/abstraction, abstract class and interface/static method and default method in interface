@@ -1,13 +1,13 @@
 interface Demo
 {
-Demo D;
+
 static void fun()
 {
 
 System.out.println("shraddha");
 
 }
-D.fun();
+
 default void gun()
 {
 
@@ -30,10 +30,8 @@ public static void main(String args[])
 Demo D1=new Test();
 D1.gun();
 D1.run();
-
-
-}
-}
-
+Demo.fun();
 
 }
+}
+
