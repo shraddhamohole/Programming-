@@ -1,0 +1,38 @@
+abstract class Demo
+{
+int id;
+String name;
+int mobno;
+Demo(int id,String name,int mobno)
+{
+this.id=id;
+this.name=name;
+this.mobno=mobno;
+}
+abstract void fun();
+}
+class Test extends Demo
+{
+int salary;
+Test(int id,String name,int mobno,int salary)
+{
+super(id,name,mobno);
+this.salary=salary;
+}
+void fun()
+{
+System.out.println("Hello world");
+System.out.println("id is"+id);
+System.out.println("name is"+name);
+System.out.println("mob no is"+mobno);
+System.out.println("salary is"+salary);
+
+}
+public static void main(String args[])
+{
+
+Test t=new Test(10,"shraddha",858986,3000);
+t.fun();
+}
+}
+
