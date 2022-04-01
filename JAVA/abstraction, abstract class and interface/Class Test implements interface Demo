@@ -1,0 +1,25 @@
+interface Demo
+{
+int a=20;
+
+public void fun();
+
+}
+
+class Test implements Demo
+{
+public void fun()
+{
+
+System.out.println("hello world");
+
+}
+
+public static void main(String args[])
+{
+
+Test t=new Test();
+t.fun();
+
+}
+}
