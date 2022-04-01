@@ -1,0 +1,39 @@
+interface Demo
+{
+Demo D;
+static void fun()
+{
+
+System.out.println("shraddha");
+
+}
+D.fun();
+default void gun()
+{
+
+System.out.println("komal");
+
+}
+void run();
+}
+
+class Test implements Demo
+{
+public void run()
+{
+System.out.println("pooja");
+
+
+}
+public static void main(String args[])
+{
+Demo D1=new Test();
+D1.gun();
+D1.run();
+
+
+}
+}
+
+
+}
