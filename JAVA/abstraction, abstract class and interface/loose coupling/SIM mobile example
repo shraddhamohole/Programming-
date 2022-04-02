@@ -1,0 +1,53 @@
+class Mobile
+{
+{
+System.out.println("***NOKIA***");
+}
+void insertSIM()
+{
+
+System.out.println("SIM IS INSERTED");
+System.out.println("SIM detected");
+}
+
+
+}
+class Mobileuser
+{
+public static void main(String args[])
+{
+Mobile Nokia=new Mobile();
+Nokia.insertSIM();
+SIM S=new JIO();
+S.dialcall();
+S.sendsms();
+
+}
+}
+interface SIM
+{
+
+void dialcall();
+void sendsms();
+}
+class JIO implements SIM
+{
+{
+System.out.println("***JIO SIMCARD found***");
+}
+public void dialcall()
+{
+
+
+
+System.out.println("dialcall:");
+}
+public void sendsms()
+{
+
+System.out.println("send sms:");
+
+
+}
+
+}
