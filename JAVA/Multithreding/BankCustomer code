@@ -1,0 +1,163 @@
+class BankCustomer
+{
+private int acno;
+private String name;
+private int balance;
+BankCustomer()
+{
+
+
+}
+BankCustomer(int acno,String name,int balance)
+{
+this.acno=acno;
+this.name=name;
+this.balance=balance;
+
+
+}
+void setAcno(int acno)
+{
+
+this.acno=acno;
+
+}
+int getAcno()
+{
+
+return this.acno;
+}
+void setName(String name)
+{
+
+this.name=name;
+
+}
+String getName()
+{
+
+return this.name;
+}
+
+void setBalance(int balance)
+{
+
+this.balance=balance;
+
+}
+int getBalance()
+{
+
+return this.balance;
+}
+int deposit(int amount)
+{
+balance=balance+amount;
+System.out.println("after deposite balance is:"+balance);
+return 0;
+}
+int withdraw(int amount)
+{
+
+balance=balance-amount;
+System.out.println("after withdraw balance is:"+balance);
+return 0;
+}
+
+}
+
+class Demo1
+{
+public static void main(String args[])
+{
+BankCustomer shraddha=new BankCustomer(100,"shraddha",5000);
+BankCustomer komal=new BankCustomer(100,"komal",6000);
+BankCustomer vaishnavi=new BankCustomer(100,"vaishnavi",7000);
+BankCustomer gaytri=new BankCustomer(100,"gaytri",8000);
+BankCustomer pooja=new BankCustomer(100,"pooja",9000);
+
+BankCustomer A=new BankCustomer();
+
+
+BankCustomer B=new BankCustomer();
+
+
+
+
+DepositeThread D1=new DepositeThread(shraddha,200);
+DepositeThread D2=new DepositeThread(komal,300);
+DepositeThread D3=new DepositeThread(vaishnavi,400);
+DepositeThread D4=new DepositeThread(gaytri,500);
+DepositeThread D5=new DepositeThread(pooja,600);
+
+
+WithdrawThread  W1=new WithdrawThread(shraddha,50);
+WithdrawThread  W2=new WithdrawThread(komal,40);
+WithdrawThread  W3=new WithdrawThread(vaishnavi,30);
+WithdrawThread  W4=new WithdrawThread(gaytri,20);
+WithdrawThread  W5=new WithdrawThread(pooja,10);
+D1.start();
+D2.start();
+D3.start();
+D4.start();
+D5.start();
+
+W1.start();
+W2.start();
+W3.start();
+W4.start();
+W5.start();
+
+}
+
+
+
+
+}
+
+class DepositeThread extends Thread
+{
+BankCustomer A;
+int amount;
+DepositeThread(BankCustomer A,int amount)
+{
+this.A=A;
+this.amount=amount;
+}
+
+public void run()
+{
+
+A.deposit(amount);
+
+
+}
+
+
+}
+
+
+
+class WithdrawThread extends Thread
+{
+BankCustomer B;
+int amount;
+WithdrawThread(BankCustomer B,int amount)
+{
+this.B=B;
+this.amount=amount;
+}
+public void run()
+{
+
+B.withdraw(amount);
+
+
+}
+
+}
+
+
+
+
+
