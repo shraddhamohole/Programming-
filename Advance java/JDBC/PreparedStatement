@@ -1,0 +1,23 @@
+import java.sql.*;
+public class Jdbcprogra3
+{
+public static void main(String args[])
+{
+//Class.forName("com.mysql.cj.jdbc.Driver");
+String q="insert into information values(?,?)";
+
+try(java.sql.Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/example1","root","mohole2002");
+java.sql.PreparedStatement ps=con.prepareStatement(q);)
+{
+
+ps.setString(1,"komal");
+ps.setInt(2,92);
+int s=ps.executeUpdate();
+System.out.println("data inserted successfully...");
+}
+catch(SQLException e)
+{
+e.printStackTrace();
+}
+}
+}
