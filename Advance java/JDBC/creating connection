@@ -1,0 +1,18 @@
+class Demo
+{
+public static void main(String args[]) throws Exception
+{
+Class.forName("com.mysql.cj.jdbc.Driver");
+java.sql.Connection con=java.sql.DriverManager.getConnection("jdbc:mysql//localhost:3306/youtube","root","mohole2002");
+if(con!=null)
+{
+System.out.println("connection succesfull");
+
+}
+else
+{
+System.out.println("connection failed");
+}
+
+}
+}
