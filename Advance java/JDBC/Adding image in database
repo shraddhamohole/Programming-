@@ -1,0 +1,26 @@
+import java.sql.*;
+import java.io.InputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+public class Jdbcprogra4 {
+    public static void main(String[] args) {
+        try (FileInputStream is = new FileInputStream("mypic.jpg")) {
+            try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/example1", "root", "mohole2002");
+                 PreparedStatement ps = con.prepareStatement("INSERT INTO images1 (id, images) VALUES (?, ?)")) {
+
+                ps.setInt(1, 1);
+                ps.setBinaryStream(2, is);
+
+                ps.executeUpdate();
+                System.out.println("Record inserted.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (FileNotFoundException ee) {
+            ee.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
