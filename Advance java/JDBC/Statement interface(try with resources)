@@ -1,0 +1,23 @@
+class Jdbcprogra
+{
+public static void main(String args[]) 
+{
+//Class.forName("com.mysql.cj.jdbc.Driver");
+
+
+try(java.sql.Connection con=java.sql.DriverManager.getConnection("jdbc:mysql://localhost:3306/youtube","root","mohole2002");
+java.sql.Statement stmt=con.createStatement();
+java.sql.ResultSet rs=stmt.executeQuery("select * from table1");)
+{
+rs.next();
+int a=rs.getInt(1);
+System.out.println(a);
+
+}
+catch (Exception e) 
+{
+            e.printStackTrace();
+      }
+
+}
+}
