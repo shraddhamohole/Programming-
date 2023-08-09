@@ -1,0 +1,28 @@
+package com.technorbit.servlet.ppa10.Country;
+
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+public class Country extends HttpServlet {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response.setContentType("text/html");
+
+        PrintWriter out = response.getWriter();
+        out.println("<html>");
+        out.println("<head><title>Country and its capital</title></head>");
+        out.println("<body>");
+
+        int countryIndex = Integer.parseInt(request.getParameter("Country"));
+        String capitals[] = new String[] {"delhi", "tokyo", "new york", "sydney"};
+        String countries[] = new String[] {"India", "Japan", "USA", "Australia"};
+        
+        out.println("The capital of " + countries[countryIndex] + " is " + capitals[countryIndex]);
+        out.println("<a href='countrypage.html'>Back</a>");
+
+        out.println("</body>");
+        out.println("</html>");
+    }
+}
