@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome Page</title>
+</head>
+<body>
+    <h1>Welcome to Our Website</h1>
+    <form action="Matrimonal" method="post">
+        <button type="submit">Submit</button>
+    </form>
+    
+    <!-- Hyperlink to the info.html page -->
+    <p><a href="info.html">Go to Info Page</a></p>
+</body>
+</html>
+
