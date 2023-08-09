@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Servlet Communication by JavaScript</title>
+</head>
+<body>
+    <h1>HTML Servlet Communication by JS</h1>
+    <form name="frm1" action="Country" method="GET">
+        Select a country:
+        <select name="Country" onchange="fun()">
+            <option value="-1" selected>Select country</option>
+            <option value="0">India</option>
+            <option value="1">Japan</option>
+            <option value="2">USA</option>
+            <option value="3">Australia</option>
+        </select>
+    </form>
+
+    <script>
+        function fun() {
+            document.frm1.submit();
+        }
+    </script>
+</body>
+</html>
+
