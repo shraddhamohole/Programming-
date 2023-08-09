@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>matrimonial site</title>
+</head>
+<body>
+
+<h1>Person Information</h1>
+
+<form action="Matrimonal" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required><br><br>
+    
+    <label for="address">Address:</label>
+    <input type="text" id="address" name="address" required><br><br>
+    
+    <label for="mobno">Mob no:</label>
+    <input type="text" id="mobno" name="mobno" required><br><br>
+    
+    <label for="age">Age:</label>
+    <input type="no" id="age" name="age" required><br><br>
+    
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
