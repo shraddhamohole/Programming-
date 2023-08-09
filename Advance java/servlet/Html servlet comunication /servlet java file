@@ -1,0 +1,35 @@
+package com.technorbit.servlet.matrimonal;
+
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+public class Matrimonal extends HttpServlet {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String name = request.getParameter("name");
+        String address = request.getParameter("address");
+        String mobno = request.getParameter("mobno");
+        int age = Integer.parseInt(request.getParameter("age"));
+
+        response.setContentType("text/html");
+        
+        PrintWriter out = response.getWriter(); // Get the PrintWriter to write HTML content to the response
+        
+        out.println("<html>");
+        out.println("<head><title>Matrimonial Response</title></head>");
+        out.println("<body>");
+        
+        if (age < 18) {
+            out.println("<p>Age is too small, not able to marry.</p>");
+        } else if (60<age) {
+            out.println("<p>You are too old for marriage.</p>");
+        } else {
+            out.println("<p>Perfect age for marriage!</p>");
+        }
+        
+        out.println("</body>");
+        out.println("</html>");
+    }
+}
